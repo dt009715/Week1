@@ -1,24 +1,31 @@
-const tasks = new map();
 const status = false;
-const button = document.querySelector('button');
-const task = document.getElementById('message');
+const Message = document.getElementById('message');
 const getList = document.getElementById('list');
-const button1 = document.getElementById('button1');
+const addButton= document.getElementById('addButton');
+const removeButton = document.getElementById('removeButton') 
 
-
-const add = button1.addEventListener('click', (event) => { list.push(task.value)})
-
- const TodoList = () => {
-    return {
-        if(add){
-            let newTask = document.createElement('li');
-            li.value = task.value;
-        }
+ const addTask = () => {
+    const taskValue = Message.value;
+    if(taskValue !== ''){
+        const li = document.createElement('li');
+        li.textContent = taskValue;
+        getList.appendChild(li);
+        Message.value = '';
+        li.addEventListener('click', done);
+        
     }
+    getList.addEventListener('click', removeTask);
+    
  }
 
-
- function done () {
-
+function done (event) {
+    const task = event.target;
+    task.classList.toggle('completed')
  }
- TodoList();
+ 
+
+ function removeTask(event) {
+        const task = event.target.parentElement;
+        getList.removeChild(task);
+ }
+ addTask();

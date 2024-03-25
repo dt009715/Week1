@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo list</title>
 </head>
-<script src="index.js"></script>
+
 <body>
     <h1>My List</h1>
     <input type="text" id="message" placeholder="add your task">
@@ -13,9 +13,9 @@
 
 
     </ul>
-    <input type="button" value="addToList" id="button1" class="button">
-    <input type="button" value="deleteFrom list" id="button2" class="button">
+    <input type="button" onclick= 'addTask()'  class="button" id ='addButton'> add a new task
+    <input type="button" onclick= 'removeTask()'  class="button" id="'removeButton"> remove a task
 </body>
-
+<script src="index.js"></script>
 
 </html>
